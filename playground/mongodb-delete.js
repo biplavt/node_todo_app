@@ -12,7 +12,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',function(err,client){
 	//deleteMany
 	db.collection('Todos_collection').deleteMany({text:'eat lunch'}).then((result)=>{
 		console.log(result);
-	}),(error)=>{
+	},(error)=>{
 		console.log(error);
 	})
 
@@ -22,6 +22,9 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp',function(err,client){
 	});
 
 	//findOneAndDelete
+	db.collection('Todos_collection').findOneAndDelete({completed:'false'}).then((result)=>{
+		console.log(result);
+	})
 
 	//db.close();
 });
