@@ -14,6 +14,10 @@ var PORT=process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+app.get('/',(req,res)=>{
+	res.send('Welcome to Notes App!');
+})
+
 app.post('/todos',(req,res)=>{
 	console.log(req.body);
 	var todo=new Todo({
