@@ -1,3 +1,5 @@
+require('./config/config');
+
 var _=require('lodash');
 var express=require('express');
 var bodyParser=require('body-parser');  //changes json to object
@@ -11,7 +13,7 @@ var {ObjectID}=require('mongodb');
 
 var app=express();
 
-var PORT=process.env.PORT || 3000;
+var PORT=process.env.PORT ;
 
 app.use(bodyParser.json());
 
