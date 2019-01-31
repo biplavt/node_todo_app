@@ -3,12 +3,12 @@ const request=require('supertest');
 
 const {app}=require('./../server');
 const {Todo}=require('./../models/todo');
+const {todos, populateTodos,users,populateUsers}=require('./seed/seed.js');
 
-beforeEach((done)=>{
-	Todo.remove({}).then(()=>{
-		done();
-	})
-});
+beforeEach(populateUsers);
+beforeEach(populateTodos);
+
+
 
 describe('POST /todos',()=>{
 	it('should create a new todo',(done)=>{
